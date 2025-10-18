@@ -43,13 +43,15 @@
       margin-bottom: 20px;
     }
     .info-text {
- max-width: 90%;
-  margin: 0 auto 32px auto;
-  padding: 0 20px;
-  font-size: 1rem;
-  line-height: 1.6;
+max-width: 800px;
+  width: 100%;
   text-align: center;
-  word-break: break-word;
+  color: var(--text);
+  font-size: 1rem;
+  margin-bottom: 32px;
+  line-height: 1.5;
+  padding: 0 24px; /* <- KEY fix for spacing on mobile */
+  box-sizing: border-box;
     }
     .mini-logos {
       display: flex;
@@ -479,6 +481,8 @@
     padding: 0 20px;
     font-size: 0.95rem;
     margin-bottom: 24px;
+     padding-left: 16px;
+    padding-right: 16px;
   }
 
   .device-tiles {
@@ -510,6 +514,13 @@
     font-size: 1.6rem;
   }
 }
+    @media (max-width: 480px) {
+  .info-text {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 
   </style>
 </head>
