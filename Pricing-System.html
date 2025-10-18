@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    *, *::before, *::after {
+  box-sizing: border-box;
+}
     :root {
       --yellow: #ffe642;
       --lime: #d3ff62;
@@ -400,23 +403,120 @@
       font-weight: 600;
       display: none;
     }
-    @media (max-width: 600px) {
-      .agreement-content .agreement-rule {
-        font-size: 0.85rem;
-      }
-      h1 {
-        font-size: 3rem;
-      }
-      .overlay-content {
-        padding: 24px;
-      }
-    }
+    
+/* Responsive tweaks: 📱📳📱📳📱📳📱📳 mobile first, larger last */
+
+/* ===========================
+   MOBILE-FIRST / RESPONSIVE
+=========================== */
+
+/* Base (for desktop) — stays above */
+
+/* Tablet & small screens */
+@media (max-width: 992px) {
+  /* Title */
+  h1 {
+    font-size: 3.6rem;
+    margin-bottom: 24px;
+  }
+
+  .info-text {
+    padding: 0 32px;
+    max-width: 800px;
+    margin: 0 auto 32px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .device-tiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .device-tile {
+    padding: 12px;
+    font-size: 0.9rem;
+    text-align: center;
+    word-break: keep-all;
+    white-space: normal;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .card {
+    padding: 32px 24px;
+  }
+
+  .plan-name {
+    font-size: 1.2rem;
+  }
+
+  .price .dollar, .price .amount {
+    font-size: 2rem;
+  }
+}
+
+/* Phones and very small screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+  }
+
+  .info-text {
+    padding: 0 20px;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  .device-tiles {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 16px;
+  }
+
+  .device-tile {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .card {
+    padding: 24px 16px;
+  }
+
+  .plan-name {
+    font-size: 1.1rem;
+  }
+
+  .price .dollar, .price .amount {
+    font-size: 1.6rem;
+  }
+}
+
   </style>
 </head>
 <body>
   <h1>Pricing</h1>
   <div class="info-text">
-    Each device requires its own account. For example, 2 devices = 2 accounts. We offer <strong>15% off</strong> on the total when multiple devices are selected.
+  Each device requires its own account.<br />
+  For example, 2 devices = 2 accounts. We offer <strong>15% off</strong> on the total when multiple devices are selected.
   </div>
   <div class="mini-logos">
     <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/visa.svg" alt="Visa">
